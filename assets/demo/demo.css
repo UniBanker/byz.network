@@ -170,7 +170,7 @@
 }
 
 .navbar-small .logo-container .brand {
-  color: #333333;
+  color: #000000;
 }
 
 .fixed-section {
@@ -192,11 +192,11 @@
   font-size: 14px;
   padding: 2px;
   display: block;
-  color: #666666;
+  color: #000000;
 }
 
 .fixed-section li a.active {
-  color: #00bbff;
+  color: #000000;
 }
 
 .fixed-section.float {
@@ -344,15 +344,15 @@
 }
 
 .navbar-default.navbar-small .logo-container .brand {
-  color: #333333;
+  color: #000000;
 }
 
 .navbar-transparent.navbar-small .logo-container .brand {
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .navbar-default.navbar-small .logo-container .brand {
-  color: #333333;
+  color: #000000;
 }
 
 .sharing-area {
