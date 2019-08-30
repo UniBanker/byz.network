@@ -1,3 +1,4 @@
+
 <!--
 =========================================================
 * BLK Design System- v1.0.0
@@ -12,7 +13,7 @@
 =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- -->
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,7 +216,7 @@
     </div>
 
 
-   <!-- More section -->
+  <!-- More section -->
   <div class="section section-lg" id="more">
       <img src="assets/img/path5.png" class="path">
     <div class="container">
@@ -230,7 +231,7 @@
                 </div>
                 <h4 class="info-title">Fast transaction layer</h4>
                 <hr class="line-primary">
-                <p>Semi-trusted BTC swaps allow you to spend bitcoin instantly without switching, by using Byzantine
+                <p>Semi-trusted atomic swaps allow you to spend bitcoin instantly without switching, by using Byzantine
                   payment layer</p>
               </div>
             </div>
@@ -253,7 +254,7 @@
                 <hr class="line-success">
                 <p>BYZ stakers earn Bitcoin core by staking Byzantine. Stake or 
                     <a href="#faq"  >
-                      <span data-toggle="tooltip" data-placement="top" title="Click to learn more about SuperStaking ( 10 x )">
+                      <span data-toggle="tooltip" data-placement="top" title="Click to learn more about SuperStacking ( 10 x )">
                         <button data-toggle="collapse" href="#collapse2" aria-expanded="true" aria-controls="collapse2" class="btn btn-link btn-primary" style="padding-top:0;padding-bottom:0.12em;padding-left:0;padding-right:0;" >
                           SuperStaking
                         </button>
@@ -273,20 +274,20 @@
   <!-- Calculator section -->
   <div class="section" id="calculator">
     <img src="assets/img/triunghiuri.png" class="dots">
-		<div class="container">
-		  <span>
-			<h1 class="text-center">Simulate staking rewards</h1>
-		  </span>
-		  <div class="row">
-			<div class="col-md-9">
-			  <div id="chart_divPie" style="width: 100%; height: 100%;"></div>
-			</div>
-			<div class="col-md-3">
-			  <div class="card card-plain">
-				<div class="card-body">
-				  <div class="row">
-					<div class="col-md-6">
-					  <div class="form-group">
+    <div class="container">
+      <span>
+      <h1 class="text-center">Simulate staking rewards</h1>
+      </span>
+      <div class="row">
+      <div class="col-md-9">
+        <div id="chart_divPie" style="width: 100%; height: 100%;"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-plain">
+        <div class="card-body">
+          <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
                 <label data-toggle="tooltip" data-placement="top" title="Amount of BYZ you want to simulate">
                     
                           <button   class="btn btn-link btn-info" style="padding-top:0;padding-bottom:0.12em;padding-left:0;padding-right:0;" >
@@ -295,9 +296,9 @@
                           </button>
                       
                 </label>
-						<input type="text" id="BYZ" class="form-control" onkeyup="drawChartPie()" value="1000"/>
-						<br>
-						<label data-toggle="tooltip" data-placement="top" title="Click to learn more about SuperStaking ( 10 x )">
+            <input type="text" id="BYZ" class="form-control" onkeyup="drawChartPie()" value="1000"/>
+            <br>
+            <label data-toggle="tooltip" data-placement="top" title="Click to learn more about SuperStacking ( 10 x )">
                 <a href="#faq"  >
                       <button data-toggle="collapse" href="#collapse2" aria-expanded="true" aria-controls="collapse2" class="btn btn-link btn-info" style="padding-top:0;padding-bottom:0.12em;padding-left:0;padding-right:0;" >  
                         10x lock
@@ -305,35 +306,35 @@
                       </button>
                   </a>
             </label>
-						<input type="checkbox" name="agree" class="bootstrap-switch" checked onchange="drawChartPie()">
-					  </div>
-					</div>
-					<div class="col-md-6">
-					  <div class="form-group">
+            <input type="checkbox" name="agree" class="bootstrap-switch" checked onchange="drawChartPie()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
                 <a href="#faq"  >
                     <button data-toggle="tooltip" data-placement="top" data-html="true" title="HashPower is the networks collective mining power.<br> This sliders maximum is set at about 10% bitcoin Hashpower.<br> <em> Click to learn more.</em>" class="btn btn-link btn-info" style="padding-top:0;padding-bottom:0.12em;padding-left:0;padding-right:0;" >
                       Hashpower
                     </button>
   
                 </a>
-						<div id="slider-vertical" style="height:100px;"></div>
-						<div class="msg2" id="amount"></div>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <p class="text-muted ">
-		   This chart is a simulation which includes assumptions like a static $10,000 Bitcoin price, and should not be
-		   taken as a promise of any kind
-		   <button class="btn btn-link btn-info" data-toggle="modal" data-target="#myModal">Other assumptions</button>
-		  </p>
-		</div>
+            <div id="slider-vertical" style="height:100px;"></div>
+            <div class="msg2" id="amount"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <p class="text-muted ">
+      This chart is a simulation which includes assumptions like a static $10,000 Bitcoin price, and should not be
+      taken as a promise of any kind
+      <button class="btn btn-link btn-info" data-toggle="modal" data-target="#myModal">Other assumptions</button>
+      </p>
+    </div>
   </div>
   
-	<!-- Swap info section -->
+  <!-- Swap info section -->
   <div class="section" id="swapinfo">
   <img src="assets/img/patrat.png" class="path">
     <div class="container align-items-center">
@@ -357,7 +358,7 @@
             </h1>
             
         </div>
-        <div class="col-lg-6 col-md-6 " style="text-align: center;">
+        <div class="col-lg-6 col-md-6 " >
           <div style=" margin: 1em; border-left-style: solid;">
             <h1 style=" margin-left: 1em;">
               <small style="opacity: 0.3;" id="Countdown2">Month 1</small><br>
@@ -395,7 +396,7 @@
     
 
       
- 
+
   
   <!-- Step 1 section -->
   <div class="section">
@@ -521,7 +522,7 @@
     </div>
   </div>
   
-   <!-- Step 2 section --> 
+  <!-- Step 2 section --> 
   <div class="section">
     <div class="container">
       <div class="row justify-content-between">
@@ -570,21 +571,19 @@
             system to make sure payments are performed safely and securely. You can rest assured as a merchant that the
             buyer is the valid owner of their Bitcoin, freeing you from liability.</p>
           <div class="btn-wrapper pt-3">
-            <a href="https://chrome.google.com/webstore/detail/blue-worlds-safest-simple/laphpbhjhhgigmjoflgcchgodbbclahk?hl=en">
-            <button   data-toggle="modal" id="getWallet"  class="btn btn-simple btn-primary">
+            <button   data-toggle="modal" data-target="#myModal1"  class="btn btn-simple btn-primary">
               <i class="tim-icons icon-book-bookmark"></i> Download
             </button>
-            <button   data-toggle="modal" id="getWallet"  class="btn btn-simple btn-info">
+            <button   data-toggle="modal" data-target="#myModal1"  class="btn btn-simple btn-info">
               <i class="tim-icons icon-bulb-63"></i> Create your wallet
             </button>
-          </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-   <!-- Keep BTC Secure  --> 
+  <!-- Keep BTC Secure  --> 
   <div class="section">
     <div class="container">
     <div class="content-center">
@@ -630,13 +629,13 @@
   
 
   
- <!--     FAQ    -->
+<!--     FAQ    -->
   <div class="section" id="faq">
       <img src="assets/img/waves.png" class="path">
       <div class="container">
           
         
-     <h1 class="text-on-back">FAQ</h1>
+    <h1 class="text-on-back">FAQ</h1>
 
       <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
         <div style="display: block;">
@@ -650,9 +649,10 @@
             </div>
             <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1">
               <div class="card-body"style="color:#9a9a9a;font-size:1.4em; padding-left: 2em">
-                Only way to get BYZ coins outside of an exchange, or the limited BLUE swap is by mining them. 
-                BYZ is SHA256 mineable, with a variable reward per block dependent on the whole network hashpower and luck. 
-                BYZ miners mine Bitcoin via the Byzantine proxy, and the amount their mine is distributed proportionally amongst the BYZ stakers. In exchange they receive newly minted BYZ coins.
+                In order to acquire BYZ coins after the limited BLUE swap and outside of an exchange, users will be able to mine them.
+                BYZ is SHA256 mineable with a variable reward per block, which is dependent on the hash power of the whole network.
+                BYZ miners mine Bitcoin via the Byzantine proxy, and the amount they mine is distributed proportionally amongst the BYZ stakers.
+                In exchange they receive newly minted BYZ coins.
               </div>
             </div>
           </div>
@@ -673,9 +673,9 @@
               </div>
               <div id="collapse2" class="collapse hide" role="tabpanel" aria-labelledby="heading2">
                 <div class="card-body"style="color:#9a9a9a;font-size:1.4em; padding-left: 2em"">
-                  Superstaking enables the BYZ network to have a gigantic throughput of information needed to make a Bitcoin side channel as well as a vehicle for 2FA and BYZ proxy mining. 
-                  Superstakers delegate their coins and receive credentials to their hosted supernode which passes more information than a normal node, because its hosted on the proper infrastructure to do so. This process is irreversible.
-                  Superstaking or 10x staking is a optional method in which the user can stake any amount of their coins, and receive proportionally 10x the amount of coins.
+                  Superstaking enables the BYZ network to have an enormous throughput of information, throughput which is required to create a Bitcoin side channel, validate D2FA and allow BYZ proxy mining to exist.
+                  Superstakers irreversibly commit their coins to the network, and in exchange they receive credentials to their hosted supernode, so named because its robust hosting infrastructure is capable of passing more information than a normal node.
+                  Superstaking, or 10x staking, is an option for those who believe in the network. It allows those users to put their coins where their beliefs are and receive 10x the staking rewards from their support of the BYZ network.
                 </div>
               </div>
             </div>
@@ -696,9 +696,9 @@
               </div>
               <div id="collapse3" class="collapse hide" role="tabpanel" aria-labelledby="heading3">
                 <div class="card-body"style="color:#9a9a9a;font-size:1.4em; padding-left: 2em"">
-                  D2FA is Decentralized Two Factor authentification is a highly secure TOTP two factor authentification protocol running on the BYZ network. No more servers, no more central failure points. 
-                  BYZ D2FA was a highly guarded technology from Blue team, we needed to create a new kind of super-fast blockchain with enough throughput to finally realize this vision. 
-                  Our version of D2FA will be ready to plug and play into any software shortly after BYZ networks successful launch.
+                  Decentralized Two Factor Authentication is a highly secure TOTP two factor authentication protocol running on the BYZ network.
+                  No more servers, no more central failure points. BYZ D2FA was a highly guarded technology created by the Blue team, which required the creation of Byzantine, a new super-fast blockchain with enough throughput to realize this vision.
+                  Our version of D2FA will be ready to plug and play into any software shortly after the successful launch of the BYZ network.
                 </div>
               </div>
             </div>
@@ -718,10 +718,11 @@
                 </div>
                 <div id="collapse4" class="collapse hide" role="tabpanel" aria-labelledby="heading4">
                   <div class="card-body"style="color:#9a9a9a;font-size:1.4em; padding-left: 2em">
-                    Superstaking is highly important to the throughput BYZ network, thats why we implemented additional incentives to spread the knowledge about it and about BYZ in the form of a-in-blockchain referral system. 
-                    People referring others will receive 5% of the superstaking amount, as well as the people their refer. 
-                    The actual superstaking amount is 11x, 0.5x to referral and 0.5x to the person being referred. 
-                    A person not referred will not receive this bonuses. This feature will be "baked in" to the blockchain and there for ever.
+                    Superstaking, as we mentioned before, is critical to the throughput of the BYZ network.
+                    For this reason we have implemented an additional incentive for users who share their knowledge of BYZ and superstaking by way of an on-chain referral system.
+                    Users who refer new superstakers will receive additional staking rewards - 5% of what is locked by their referrals will be rewarded to the referrer, and those who are referred will also receive a bonus of 5% staking rewards from what they lock.
+                    This means that a referred superstaker will receive 10.5x the rewards of a regular staker for all their locked coins and referrers accumulate more rewards for every referral.
+                    This feature is "baked into" BYZ and the rewards paid out will reflect this bonus permanently.
                   </div>
                 </div>
               </div>
@@ -741,8 +742,8 @@
                   </div>
                   <div id="collapse5" class="collapse hide" role="tabpanel" aria-labelledby="heading5">
                     <div class="card-body"style="color:#9a9a9a;font-size:1.4em; padding-left: 2em"">
-                      BYZ is a tradable coin, which gets its addressing structure from Bitcoin and other coins, therefor its very easy to add it to exchanges.
-                      BYZ will ship with all the documents needed to add it to any exchange in 5minutes. No developer permission necessary.
+                      BYZ is a tradable coin, which developed its addressing structure from Bitcoin. 
+                      This makes it easy for exchanges to add it within their existing frameworks and BYZ will ship with all the required documentation, no developer permission necessary.
                     </div>
                   </div>
                 </div>
@@ -859,7 +860,6 @@
         </div>
         <div class="modal-body">
           <p class="text-muted ">
-            <li>Non changing price of BTC of $10,000</li>
             <li>3BLN total BYZ (this can be lower depending on swap) </li>
             <li>75 million Terahash hashing btc which might increase or decrease </li>
             <li>BYZ hashpower which is unknown, MAX value of the slider is about 10% of Bitcoin Hashrate, Bitcoin Byzantine might be lower or higher</li>
