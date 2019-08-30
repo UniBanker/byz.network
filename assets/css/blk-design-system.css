@@ -6693,14 +6693,14 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #212529 !important;
+  background-color: #000000 !important;
 }
 
 a.bg-dark:hover,
 a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
-  background-color: #0a0c0d !important;
+  background-color: #000000 !important;
 }
 
 .bg-default {
@@ -16415,7 +16415,8 @@ textarea.form-control:active {
   position: absolute;
   transition: 0.5s ease-out;
   overflow: hidden;
-  border-radius: 20%;
+  border-radius: 30%;
+ 
 }
 
 .index-page .squares.square1 {
@@ -16455,12 +16456,23 @@ textarea.form-control:active {
 }
 
 .index-page .squares.square5 {
-  animation: move-left-right 6s infinite;
-  height: 250px;
-  width: 250px;
-  opacity: 0.1;
-  left: 32%;
-  bottom: 29%;
+  animation: move-left-right 100s infinite;
+  height: 350px;
+  width: 350px;
+  opacity: 1;
+  left: 52%;
+  bottom: 32%;
+  shape-outside: url('\assets\img\path1.png')
+}
+.image-holder {
+  border-top-left-radius: 70px;
+  transform-origin: right left;
+  transform: skewX(12deg);
+  overflow: hidden;
+}
+.image-holder img {
+  transform-origin: right left;
+  transform: skewX(-12deg);
 }
 
 .index-page .squares.square6 {

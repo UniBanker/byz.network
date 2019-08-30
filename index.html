@@ -17,12 +17,18 @@
 <html lang="en">
 
 <head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
     .navbar {
       background: #eee !important;
     }
   </style>
+  <meta name="viewport" content="width=device-width">
   <meta charset="utf-8" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -40,9 +46,9 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="profile-page">
+<body class="index-page">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-darker" color-on-scroll="100">
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="https://byz.network" rel="tooltip" title="Designed and Coded by Team Blue" data-placement="bottom" target="_blank">
@@ -88,106 +94,162 @@
   </nav>
   <!-- End Navbar -->
   <div class="wrapper">
+      <img src="assets/img/path4.png" class="path">
     <div class="page-header">
-      <section class="section section-lg section-safe">
-        <img src="assets/img/path5.png" class="path">
-        <div class="container">
-          <div class="row row-grid justify-content-between">
-            <div class="col-md-5">
-              <img src="assets/img/chester-wade.jpg" class="img-fluid floating">
-              <div class="card card-stats bg-danger">
-                <div class="card-body">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                      <p class="card-title">100%</p>
-                      <p class="card-category text-white">Safe</p>
-                    </div>
-                  </div>
+        <div class="image-holder" style="text-align: right;">
+            <video width="60%" height="100%" autoplay loop muted playsinline>
+                <source src="assets/img/HERO.mp4"
+                        type="video/mp4">
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+          </div>
+        <div class="content-center">
+          
+            <div class="row row-grid justify-content-between align-items-center text-left">
+              
+              <div class="col-lg-6 col-md-6">
+                <h1 class="text-white">Mine Bitcoin by staking
+                  <br/>
+                  <span class="text-white">Byzantine</span>
+                </h1>
+                <p class="text-white mb-3">Altcoin as a service, a radically different concept. Mineable and stakable, integrates with Bitcoin on a never seen before level.</p>
+                <div class="btn-wrapper mb-3">
+                    <a href="#more" class="btn btn-success btn-link btn-sm"><p class="category text-success d-inline">Read more</p>
+                  <i class="tim-icons icon-minimal-right"></i></a>
                 </div>
               </div>
-              <div class="card card-stats bg-info">
-                <div class="card-body">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                      <p class="card-title">4,000+</p>
-                      <p class="card-category text-white">Active wallets</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card card-stats bg-default">
-                <div class="card-body">
-                  <div class="justify-content-center">
-                    <div class="numbers">
-                      <p class="card-title">$26 M</p>
-                      <p class="card-category text-white">Secured</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-lg-4 col-md-5">
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="px-md-5">
-                <hr class="line-success">
-                <h3>Byzantine for Bitcoin</h3>
-                <p>The most secure all-in-one Bitcoin payments network. Focused on creating adoption of cryptocurrency for merchants worldwide.</p>
-                <ul class="list-unstyled mt-5">
-                  <li class="py-2">
-                    <div class="d-flex align-items-center">
-                      <div class="icon icon-success mb-2">
-                        <i class="tim-icons icon-vector"></i>
-                      </div>
-                      <div class="ml-3">
-                        <h6>Built on top of the Blue security SDK</h6>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-2">
-                    <div class="d-flex align-items-center">
-                      <div class="icon icon-success mb-2">
-                        <i class="tim-icons icon-tap-02"></i>
-                      </div>
-                      <div class="ml-3">
-                        <h6>Easy to integrate for merchants</h6>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-2">
-                    <div class="d-flex align-items-center">
-                      <div class="icon icon-success mb-2">
-                        <i class="tim-icons icon-single-02"></i>
-                      </div>
-                      <div class="ml-3">
-                        <h6>World-class support team</h6>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+          </div>
+    </div>
+  </div>
+  <section class="section section-lg" id="more">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <h1 class="text-center">Bitcoin Byzantium - Altcoin as a service to Bitcoin</h1>
+            <div class="row row-grid justify-content-center">
+              <div class="col-lg-3">
+                <div class="info">
+                  <div class="icon icon-primary">
+                    <i class="tim-icons icon-money-coins"></i>
+                  </div>
+                  <h4 class="info-title">Fast transaction layer</h4>
+                  <hr class="line-primary">
+                  <p>Semi-trusted atomic swaps allow you to spend bitcoin instantly without switching, by using Byzantium payment layer</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="info">
+                  <div class="icon icon-warning">
+                    <i class="tim-icons icon-chart-pie-36"></i>
+                  </div>
+                  <h4 class="info-title">Mining Byzantium secures Bitcoin core</h4>
+                  <hr class="line-warning">
+                  <p>Byzantium miners earn BYZ while securing Bitcoin by a proxy mining service.</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="info">
+                  <div class="icon icon-success">
+                    <i class="tim-icons icon-single-02"></i>
+                  </div>
+                  <h4 class="info-title">Stake BYZ to earn Bitcoin</h4>
+                  <hr class="line-success">
+                  <p>BYZ stakers earn Bitcoin core by staking Byzantium. Stake or SuperStake BYZ and earn a part of the whole BYZ hashrate. You can see the caculator below.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="page-header">
+      </div>
+    </section>
+    <div class="section " id="calculator">
       <img src="assets/img/dots.png" class="dots">
       <img src="assets/img/triunghiuri.png" class="dots">
-      <div class="container align-items-center">
+	    <div class="container" >
+         <span><h1 class="text-center">Calculate staking rewards</h1></span>
         <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <h5 class="text-on-back">Blue Swap</h5>
-              <h1>Current Swap Ratio</h1>
-              <h2>1 BLUE = 5 BYZ</h2>
+		  <div class="col-md-9">
+			<div id="chart_divPie" style="width: 100%; height: 100%;"></div>
+		  </div>
+		  <div class="col-md-3">
+            <div class="card card-plain">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>BYZ amount</label>
+                        <input type="text" id="BYZ" class="form-control" onchange="drawChartPie()" value="1000" />
+                        <br>
+                        <label>10x Lock</label>
+                        <input type="checkbox" name="agree" class="bootstrap-switch" checked onchange="drawChartPie()"></div>
+                      </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>HashPower</label>
+                        <div id="slider-vertical" style="height:100px;"></div>
+						            <div class="msg2" id="amount"></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-              <br /><br /><br />
-              <h1>Activation Block</h1>
-              <h2>#8456789</h2>
+          </div>
+          <p class="text-muted " >
+              This chart is a simulation which includes assumptions like a static 10 000$ Bitcoin price, and should not be taken as a promise of any kind
+              <button class="btn btn-link btn-info" data-toggle="modal" data-target="#myModal">Other assumptions</button>
+          </p> </div><div class="section ">
+            <img src="assets/img/triunghiuri.png" class="shapes triangle">
+          <div class="container align-items-center" >
+              <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                      <h5 class="text-on-back">Blue Swap</h5>
+                    <h1>Current Swap Ratio</h1>
+                    <h2>1 BLUE = 5 BYZ</h2>
+                  </div>
+                  <div class="col-lg-6 col-md-6 " tyle="text-align: center;">
+                    <div style=" margin: 1em; border-left-style: solid;">
+                    <h1 style=" margin-left: 1em;">
+                    <small style="opacity: 0.3;">Month 1</small><br>
+                      1 BLUE is Worth 5 BYZ
+                    </h1>
+                   </div>
+                   <div style=" margin-left: 2em; border-left-style: solid;">
+                    <h1 style=" margin-left: 1em;">
+                        <small style="opacity: 0.3;">Month 2</small><br>
+                        1 BLUE is Worth 4 BYZ
+                    </h1>
+                  </div>
+                    <div style=" margin-left: 3em; border-left-style: solid;">
+                        <h1 style=" margin-left: 1em;">
+                        <small style="opacity: 0.3;">Month 3</small><br>
+                        1 BLUE is Worth 3 BYZ
+                    </h1>
+                  </div>
+                    <div style=" margin-left: 4em; border-left-style: solid;">
+                        <h1 style=" margin-left: 1em;">
+                        <small style="opacity: 0.3;">Month 4</small><br>
+                        1 BLUE is Worth 2 BYZ
+                    </h1>
+                  </div>
+                    <div style=" margin-left: 5em; border-left-style: solid;">
+                        <h1 style=" margin-left: 1em;">
+                        <small style="opacity: 0.3;">Month 5</small><br>
+                        1 BLUE is Worth 1 BYZ
+                    </h1>
+                  </div>
+                  </div>
+              </div>
             </div>
-        </div>
-      </div>
-    </div>
-    <div class="page-header">
+          </div></div>
+		  <div class="section" >
+          <img src="assets/img/blob.png" class="path">
+          <img src="assets/img/triunghiuri.png" class="shapes triangle">
+<div class="msg"></div>
+            </div></div>
+    <div class="section">
       <img src="assets/img/dots.png" class="dots">
       <img src="assets/img/path4.png" class="path">
       <div class="container align-items-center">
@@ -195,7 +257,7 @@
           <div class="col-lg-6 col-md-6">
             <h1 class="profile-title text-left">Getting Byzantine</h1>
             <h5 class="text-on-back">01</h5>
-            <p class="profile-description">On Ethereum block <a href="https://etherscan.io/block/8456789">#8456789</a> the BLUE to BYZ smart contract will activate, allowing users to exchange each BLUE token for 5 BYZ coins. Use the Blue Wallet to perform the swap.
+            <p class="profile-description">On Ethereum block <a href="https://etherscan.io/block/8432100">#8432100</a> the BLUE to BYZ smart contract will activate, allowing users to exchange each BLUE token for 5 BYZ coins. Use the Blue Wallet to perform the swap.
             </p>
             <div class="btn-wrapper profile pt-3">
               <a target="_blank" href="https://twitter.com/Blue_Protocol" class="btn btn-icon btn-twitter btn-round" data-toggle="tooltip" data-original-title="Follow us">
@@ -295,7 +357,7 @@
                         </div>
                       </div>
                     </div>
-                    <button onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8456789');" type="submit" class="btn btn-simple btn-primary btn-icon btn-round float-right"><i class="tim-icons icon-send"></i></button>
+                    <button onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8432100');" type="submit" class="btn btn-simple btn-primary btn-icon btn-round float-right"><i class="tim-icons icon-send"></i></button>
                   </div>
                   <div class="tab-pane" id="linkc">
                     <div class="table-responsive">
@@ -379,10 +441,10 @@
             <h5 class="text-on-back">02</h5>
             <p class="profile-description text-left">Utilizing Byzantine is as simple as using Bitcoin. Download and install a Byzantine node to get up and running in no time. Byzantine uses a unique device fingerprinting system to make sure payments are performed safely and securely. You can rest assured as a merchant that the buyer is the valid owner of their Bitcoin, freeing you from liability.</p>
             <div class="btn-wrapper pt-3">
-              <button onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8456789')" href="javascript:void(0)" class="btn btn-simple btn-primary">
+              <button onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8432100')" href="javascript:void(0)" class="btn btn-simple btn-primary">
                 <i class="tim-icons icon-book-bookmark"></i> Download
               </button>
-              <button onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8456789')" href="javascript:void(0)" class="btn btn-simple btn-info">
+              <button onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8432100')" href="javascript:void(0)" class="btn btn-simple btn-info">
                 <i class="tim-icons icon-bulb-63"></i> Create your wallet
               </button>
             </div>
@@ -394,7 +456,6 @@
     <div class="wrapper">
         <div class="page-header">
           <img src="assets/img/blob.png" class="path">
-          <img src="assets/img/triunghiuri.png" class="shapes triangle">
           <div class="content-center">
             <div class="row row-grid justify-content-between align-items-center text-left">
               <div class="col-lg-6 col-md-6">
@@ -405,7 +466,7 @@
                 <p class="text-white mb-3">Byzantine superpowers Bitcoin With advanced security features, enabling micropayments from BTC that are cheap, fast, and final.</p>
                 <div class="btn-wrapper mb-3">
                   <p class="category text-success d-inline">Get Byzantine</p>
-                  <a onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8456789')" href="#" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-right"></i></a>
+                  <a onClick="alert('The Byzantine swap is not yet live. Wait for ETH block #8432100')" href="#" class="btn btn-success btn-link btn-sm"><i class="tim-icons icon-minimal-right"></i></a>
                 </div>
                 <!--<div class="btn-wrapper">
                   <div class="button-container">
@@ -428,7 +489,7 @@
           </div>
         </div>
 
-
+      </div></div>
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -502,7 +563,6 @@
     </footer>
   </div>
   <!--   Core JS Files   -->
-  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -519,6 +579,115 @@
   <script src="assets/demo/demo.js"></script>
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
+  <script src="byz.js" type="text/javascript"></script>
+        <!-- Sart Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                  <h4 class="title title-up">Chart Assumptions</h4>
+                </div>
+                <div class="modal-body" >
+                  <p>
+                      Non increasing price of BTC of 10 000$<br>
+                      3BLN total BYZ (this can be lower depending on swap) <br>
+                      <br>75 million Terahash on btc which might increase, <br>BYZ hashpower which is unknown<br>
+                  </p>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                  
+                  <button type="button" class="btn btn-success" data-dismiss="modal" style="text-align: center; margin:auto; display:block;">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  End Modal -->
+          <!-- Mini Modal -->
+          <div class="modal fade modal-mini modal-primary modal-mini" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove text-white"></i>
+                  </button>
+                  <div class="modal-profile">
+                    <i class="tim-icons icon-single-02"></i>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <p>Always have an access to your profile</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-link btn-neutral">Back</button>
+                  <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Form Modal -->
+          <div class="modal fade modal-black" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove text-white"></i>
+                  </button>
+                  <div class="text-muted text-center ml-auto mr-auto">
+                    <h3 class="mb-0">Sign in with</h3>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div class="btn-wrapper text-center">
+                    <a href="#" class="btn btn-neutral btn-icon">
+                      <img src="assets/img/github.svg">
+                    </a>
+                    <a href="#" class="btn btn-neutral btn-icon">
+                      <img src="assets/img/google.svg">
+                    </a>
+                  </div>
+                  <div class="text-center text-muted mb-4 mt-3">
+                    <small>Or sign in with credentials</small>
+                  </div>
+                  <form role="form">
+                    <div class="form-group mb-3">
+                      <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="tim-icons icon-email-85"></i>
+                          </span>
+                        </div>
+                        <input class="form-control" placeholder="Email" type="email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="tim-icons icon-key-25"></i>
+                          </span>
+                        </div>
+                        <input class="form-control" placeholder="Password" type="password">
+                      </div>
+                    </div>
+                    <div class="form-check mt-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" checked>
+                        <span class="form-check-sign"></span>
+                        Remember me!
+                      </label>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary my-4">Sign in</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  End Modal -->
 </body>
 
 </html>
