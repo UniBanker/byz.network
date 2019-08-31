@@ -93,7 +93,7 @@
          <div class="page-header">
            <img src="../assets/img/blob.png" class="path">
            <img src="../assets/img/triunghiuri.png" class="shapes triangle">
-           <div class="content-center">
+           <div class="content-center" style="display: none;" id="swapDiv">
              <div class="row row-grid justify-content-between align-items-center text-left">
                 <div class="col-lg-6 col-md-6">
                     <form>
@@ -112,6 +112,44 @@
                 </div>
               </div>
            </div>
+           <div class="content-center" id="agreeTerms">
+              <div class="row row-grid justify-content-between align-items-center text-left">
+                 <div class="col-lg-9 col-md-9">
+                     By selecting "AGREE" below you agree to the following terms:<br /><br />
+                     <p style="height: 200px; overflow: scroll;">
+                       The swap of BYZ coins for BLUE tokens is not indicative of an investment in any
+                       organization or person's performing engineering or otherwise commercial activities.
+                       Byzantine (BYZ) coins are used as part of a network for securing payments on the
+                       Bitcoin network, and do not entitle owners to any:<br />
+                        - Voting rights<br />
+                        - Equity<br />
+                        - Guarantees on speculative value<br />
+                        - Other special privileges<br />
+                       The ownership of coins, or swapping of coins furthermore does not guarantee the
+                       successful market usage of Byzantine or Blue Protocol networks, but offers their
+                       availability in the case of successfully created product-market fit, technologies,
+                       or any other endeavors that may be construed as commercial or speculative.
+                       The Blue team is offering this exchange via a trustless, decentralized protocol,
+                       and is not responsible for marketplace activities utilizing the coins, market value,
+                       price appreciation, price depreciation, percieved or actual financial or other
+                       commercial losses that may be encountered.
+                       While cryptocurrency markets involving Bitcoin, Ethereum, and other such instruments
+                       may be wildly speculative, the intent of Byzantine and this redemption of Byzantine
+                       coins is not of a speculative nature, and is not to be considered a financial
+                       investment of any kind.
+                       You have not been provided any financial advice or other guidance regarding the
+                       purchase, sale, trade, swap, or other mechanism involving Blue tokens nor Byzantine
+                       coins.
+                     </p>
+                 </div>
+                 <div class="col-lg-3 col-md-3">
+                   
+                    I AGREE
+                    <input type="checkbox" id='agreeCheckbox' /><br />
+                    <button disabled id="agreeButton">CONTINUE</button>
+                 </div>
+               </div>
+            </div>
          </div>
 
 
@@ -119,7 +157,7 @@
 
          <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/9.0.0/bignumber.min.js"></script>
          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-         <script src="byz.js"></script>
+         <script src="claim.js"></script>
          
 
 

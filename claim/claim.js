@@ -116,6 +116,23 @@ const byz = {
 }
 
 window.addEventListener('load', async () => {
+
+    $("#agreeCheckbox").change((e) => {
+        console.log("agreeCheckbox");
+        if($("#agreeCheckbox").is(':checked')) {
+            console.log("agreeCheckbox T");
+            $("#agreeButton").prop('disabled', false);
+        }
+        else {
+            console.log("agreeCheckbox F");
+            $("#agreeButton").prop('disabled', true);
+        }
+    });
+    $("#agreeButton").click((e) => {
+        $("#agreeTerms").hide();
+        $("#swapDiv").fadeIn(250);
+    });
+
     if (window.web3) {
         window.web3 = new Web3(web3.currentProvider);
         let userETHAddress = web3.eth.accounts[0];
