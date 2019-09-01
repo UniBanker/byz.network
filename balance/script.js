@@ -375,6 +375,7 @@ window.addEventListener("load", async () => {
     let liveBlue = web3.eth.contract(byz.blueABI).at(byz.blueAddress);
 
     web3.settings.defaultAccount = web3.eth.accounts[0];
+    $("#ethAddress").val(web3.eth.accounts[0]);
 /*
     try {
       liveBlue.allowance(userETHAddress, byz.swapAddress, function(err, val) {
@@ -393,7 +394,7 @@ window.addEventListener("load", async () => {
         console.log(r.toString())
         $("#balance").html(`BLUE Swapped: 
           ${ (r.dividedBy(1e8)).toString()}
-        BYZ`);
+        BLUE`);
       })
 
       /*let addr = byz.swapAddress;//"0x33990122638b9132ca29c723bdf037f1a891a70c";
