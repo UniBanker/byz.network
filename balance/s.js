@@ -394,7 +394,10 @@ window.addEventListener("load", async () => {
         console.log(r.toString())
         $("#balance").html(`BLUE Swapped: 
           ${ (r.dividedBy(1e8)).toString()}
-        BLUE`);
+        BLUE<br />
+        for </br >
+        ${ (5*r.dividedBy(1e8)).toString()} BYZ
+        `);
       })
 
       /*let addr = byz.swapAddress;//"0x33990122638b9132ca29c723bdf037f1a891a70c";

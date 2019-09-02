@@ -160,7 +160,7 @@ window.addEventListener('load', async () => {
                     str = `Approve BLUE for swap before swapping. Allowance of ${val.dividedBy(1e8).toString()} less than ${blue}`;
                     $("#approve").show();
                     $("#approve").click(function() {
-                        liveBlue.approve(byz.swapAddress, (new BigNumber(blue).multipliedBy(1e8)).toString(), {gas: 300000, gasPrice: 2000000000}, function(err, resp) {
+                        liveBlue.approve(byz.swapAddress, (new BigNumber(blue).multipliedBy(1e8)).toString(), {gas: 300000, gasPrice: 16000000000}, function(err, resp) {
                             if(typeof(err) != 'undefined' && err != null) {
                                 $("#msg").html(err);
                             }
@@ -178,7 +178,7 @@ window.addEventListener('load', async () => {
                         //function deposit(uint256 tokens, string memory btcAddress) public payable {
                         
                         
-                        liveSwap.deposit((new BigNumber(blue).multipliedBy(1e8)).toString(), byzAddress, {gas: 600000, gasPrice: 2000000000}, function(err, resp) {
+                        liveSwap.deposit((new BigNumber(blue).multipliedBy(1e8)).toString(), byzAddress, {gas: 600000, gasPrice: 16000000000}, function(err, resp) {
                             if(typeof(err) != 'undefined' && err != null) {
                                 $("#msg").html(err);
                             }
