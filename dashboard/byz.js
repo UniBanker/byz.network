@@ -129,16 +129,17 @@ const byzQtyForEvents = (evts) => {
 }
 
 const getByzData = (options, cb) => {
-    if (typeof web3 !== 'undefined') {
-        window.web3 = new Web3(web3.currentProvider)
-    } else {
-        window.web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io:443'))
-    }
+    // if (typeof web3 !== 'undefined') {
+    //     window.web3 = new Web3(web3.currentProvider)
+    // } else {
+    //     window.web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io:443'))
+    // }
+    let web3Inner = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io:443'))
 
     let address = options.address || "0x0";
     let nEvents = options.events || 5;
 
-    var liveSwap = new web3.eth.Contract(byz.abi, byz.swapAddress, {
+    var liveSwap = new web3Inner.eth.Contract(byz.abi, byz.swapAddress, {
         from:  address, // default from address
         gasPrice: '5000000000' // default gas price in wei, 5 gwei in this case
     });
@@ -168,3 +169,7 @@ const getByzData = (options, cb) => {
         );
     });
 }
+
+getByzData({}, (data) => {
+    console.log(`Total swapped: ${data.totalSwapped}`);
+});

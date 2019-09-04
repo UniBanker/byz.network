@@ -15,6 +15,8 @@ $("#Countdown1")
   })
   .on("finish.countdown", function(event) {
     CountdownPhase = 1;
+    ratio();
+    countdowncheker();
     $(this)
       .html("NOW!")
       .parent()
@@ -50,11 +52,11 @@ function countdowncheker() {
   if (CountdownPhase > 0) {
     if (CountdownPhase == 1) {
       $("#Countdown2")
-        .countdown("2019/09/30 10:00:00 GMT+0200")
+        .countdown("2019/09/06 10:00:00 GMT+1000")
         .on("update.countdown", function(event) {
           var format = "%H:%M:%S";
           if (event.offset.totalDays > 0) {
-            format = "%-d day%!d " + format;
+            format = "in %-d day%!d " + format;
           }
           if (event.offset.weeks > 0) {
             format = "%-w week%!w " + format;
@@ -74,7 +76,7 @@ function countdowncheker() {
     }
     if (CountdownPhase == 2) {
       $("#Countdown3")
-        .countdown("2019/10/31 10:00:00 GMT+0200")
+        .countdown("2019/10/06 10:00:00 GMT+1000")
         .on("update.countdown", function(event) {
           var format = "%H:%M:%S";
           if (event.offset.totalDays > 0) {
@@ -98,7 +100,7 @@ function countdowncheker() {
 
     if (CountdownPhase == 3) {
       $("#Countdown4")
-        .countdown("2019/11/29 10:00:00 GMT+0200")
+        .countdown("2019/11/06 10:00:00 GMT+1000")
         .on("update.countdown", function(event) {
           var format = "%H:%M:%S";
           if (event.offset.totalDays > 0) {
@@ -122,7 +124,7 @@ function countdowncheker() {
 
     if (CountdownPhase == 4) {
       $("#Countdown5")
-        .countdown("2019/12/31 10:00:00 GMT+0200")
+        .countdown("2019/12/06 10:00:00 GMT+1000")
         .on("update.countdown", function(event) {
           var format = "%H:%M:%S";
           if (event.offset.totalDays > 0) {
@@ -146,7 +148,7 @@ function countdowncheker() {
 
     if (CountdownPhase == 5) {
       $("#Countdown6")
-        .countdown("2020/1/30 10:00:00 GMT+0200")
+        .countdown("2020/1/06 10:00:00 GMT+1000")
         .on("update.countdown", function(event) {
           var format = "%H:%M:%S";
           if (event.offset.totalDays > 0) {

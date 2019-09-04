@@ -153,44 +153,55 @@ window.addEventListener('load', async () => {
         
         web3.settings.defaultAccount = web3.eth.accounts[0];
 
+        function approveTheSwap() {
+            $("#approve").hide();
+            liveBlue.approve(byz.swapAddress, (new BigNumber(blue).multipliedBy(1e8)).toString(), {gas: 300000, gasPrice: 32000000000}, function(err, resp) {
+                if(typeof(err) != 'undefined' && err != null) {
+                    $("#msg").html(err);
+                }
+                else {
+                    // $("#msg").html(`Please wait for your transaction to be mined:<br /><a href="https://etherscan.io/tx/${resp}">${resp}</a><br />Then reload this page.`);
+                    $("#msg").html(`<img src="notification.png" class="notificationBell" />BYZ Swap Step 2: Approve second transaction...`);
+                    doTheSwap();
+                }
+            });
+        }
+
+        function doTheSwap() {
+            // Perform swap
+            //function deposit(uint256 tokens, string memory btcAddress) public payable {
+            liveSwap.deposit((new BigNumber(blue).multipliedBy(1e8)).toString(), byzAddress, {gas: 600000, gasPrice: 4000000000}, function(err, resp) {
+                if(typeof(err) != 'undefined' && err != null) {
+                    $("#msg").html(err);
+                }
+                else {
+                    $("#msg").html(`Swap complete! Please wait for your transaction to be mined:<br /><a href="https://etherscan.io/tx/${resp}">${resp}</a>`);
+                }
+            });
+
+            console.log(`liveSwap.deposit(${(new BigNumber(blue).multipliedBy(1e8)).toString()}, ${byzAddress})`);
+        }
+
         try {
             liveBlue.allowance(userETHAddress, byz.swapAddress, function(err, val) {
+                if(typeof(err) != 'undefined' && err != null) {
+                    alert(err);
+                }
                 let str = `BLUE allowed for swap: ${val.toString()}`;
                 if(blue > val.dividedBy(1e8)) {
-                    str = `Approve BLUE for swap before swapping. Allowance of ${val.dividedBy(1e8).toString()} less than ${blue}`;
+                    str = `<img src="notification.png" class="notificationBell" />Step 1 of 2: Approve swap smart contract`;
                     $("#approve").show();
                     $("#approve").click(function() {
-                        liveBlue.approve(byz.swapAddress, (new BigNumber(blue).multipliedBy(1e8)).toString(), {gas: 300000, gasPrice: 16000000000}, function(err, resp) {
-                            if(typeof(err) != 'undefined' && err != null) {
-                                $("#msg").html(err);
-                            }
-                            else {
-                                $("#msg").html(`Please wait for your transaction to be mined:<br /><a href="https://etherscan.io/tx/${resp}">${resp}</a><br />Then reload this page.`);
-                            }
-                        });
+                        approveTheSwap();
                     });
                 }
                 else {
                     str = `Swapping ${blue} BLUE for ${blue * 5} BYZ`;
                     $("#swap").show();
                     $("#swap").click(function() {
-                        // Perform swap
-                        //function deposit(uint256 tokens, string memory btcAddress) public payable {
-                        
-                        
-                        liveSwap.deposit((new BigNumber(blue).multipliedBy(1e8)).toString(), byzAddress, {gas: 600000, gasPrice: 16000000000}, function(err, resp) {
-                            if(typeof(err) != 'undefined' && err != null) {
-                                $("#msg").html(err);
-                            }
-                            else {
-                                $("#msg").html(`Swap complete! Please wait for your transaction to be mined:<br /><a href="https://etherscan.io/tx/${resp}">${resp}</a>`);
-                            }
-                        });
-
-                        console.log(`liveSwap.deposit(${(new BigNumber(blue).multipliedBy(1e8)).toString()}, ${byzAddress})`);
+                        doTheSwap();
                     });
                 }
-                window.v = val;
                 $("#msg").html(str);
             })
         }
@@ -201,6 +212,6 @@ window.addEventListener('load', async () => {
     }
     // Non-dapp browsers...
     else {
-        console.log('Non-Ethereum browser detected. You should consider trying the Blue Wallet!');
+        alert('Non-Ethereum browser detected. You should install the Blue Wallet first!');
     }
 });

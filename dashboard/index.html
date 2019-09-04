@@ -18,7 +18,7 @@ $("document").ready(() => {
         $("#msg").html(`
             Your BYZ balance: ${data.byzBalance} BYZ<br/>
             Total swapped: ${data.totalSwapped} BLUE<br/>
-            Last swap:<br/> ${formatSwap(lastSwap)}<br/>
+            Last swap:<br/> ${JSON.stringify(lastSwap)}<br/>
         `);
     });
 })
