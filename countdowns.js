@@ -83,7 +83,7 @@ function countdowncheker() {
             format = "%-d day%!d " + format;
           }
           if (event.offset.weeks > 0) {
-            format = "%-w week%!w " + format;
+            format = "in %-w week%!w " + format;
           }
           $(this).html(event.strftime(format));
         })

@@ -14,6 +14,51 @@ $(function() {
   $("#amount").val($("#slider-vertical").slider("value"));
 });
 
+function gotoSwap(){
+  btcAdress = byzAddress.substring(3,byzAddress.length);
+  window.location.href = "http://byz.network/claim/?btcAddress=" + btcAdress + "&blue="+ this.blueToSwap;
+}
+
+function checkAddress(){
+  this.byzAddress = $('#byzAddress').val();
+  
+  $("#successValidatingByzAddress").hide();
+  
+  
+  if (/^BYZ3[a-km-zA-HJ-NP-Z1-9]{24,33}$/.test(byzAddress)) {
+  $("#byzAddress").prop('disabled', true);
+  $("#errorValidatingByzAddress").hide();
+  $("#successValidatingByzAddress").fadeIn(250);
+  this.addresValidated = true;
+  if (!isNaN($("#amountToSwap").val())){
+    $("#errorAmount").hide(); 
+    $("#swapButton").prop('disabled', false);
+  }
+
+}else{
+  $("#errorValidatingByzAddress").fadeIn(250);
+  $("#swapButton").prop('disabled', true);
+  this.addresValidated = false;
+}
+};
+
+function checkAmount(){
+  this.blueToSwap = $("#amountToSwap").val();
+  console.log(this.addresValidated);
+  console.log(!isNaN($("#amountToSwap").val()));
+  if (!isNaN($("#amountToSwap").val())){
+    $("#errorAmount").hide(); 
+    if(this.addresValidated){
+      $("#swapButton").prop('disabled', false);
+    }
+  }else {
+   $("#errorAmount").fadeIn(250); 
+   $("#swapButton").prop('disabled', true);
+  }
+};
+
+
+
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChartPie);
 
