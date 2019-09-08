@@ -340,9 +340,9 @@
     <div class="container">
       <div class="row justify-content-center" style="text-align: center;">
         <div class="col-lg-12"> 
-          <h5 class="text-on-back" >5 to 1 swap ends </h5>
+          <h1 class="display-1" style="opacity:0.7;" >4 to 1 swap ends 
 
-          <h5 class="text-on-back"  >  <div id="Countdown2">Countdown</div></h5>
+          <div id="Countdown3">Countdown</div></h1>
 
         </div>
       </div>
@@ -359,7 +359,7 @@
         height: 100%;"
       >
         <div class="col-lg-6 col-md-6" >
-          <h1 class="display-1">
+          <h1 class="display-2">
               Swap Live 
               <br>
               <small style=" margin-left: 0.5em;" class="text-muted" id="Countdown1">
@@ -414,7 +414,7 @@
 
   
   <!-- Step 1 section -->
-  <div class="section">
+  <div class="section" id="swap">
   <img src="assets/img/blob.png" class="path">
     <div class="container align-items-center">
       <div class="row">
@@ -422,8 +422,8 @@
           <h1 class="profile-title text-left">Getting Byzantine</h1>
           <h5 class="text-on-back">01</h5>
           <p class="profile-description">On Ethereum block <a href="https://etherscan.io/block/8456789">#8456789</a> the
-            BLUE to BYZ smart contract will activate, allowing users to exchange each BLUE token for 5 BYZ coins. Use
-            the Blue Wallet to perform the swap.
+            BLUE to BYZ smart contract was activated, allowing users to exchange each BLUE token for 5 BYZ coins.
+            BLUE community swapped more than half of all the circulating supply of BLUE. <br />Current swap period swaps 1 BLUE for 4 BYZ each.
           </p>
           <div class="btn-wrapper profile pt-3">
             <a target="_blank" href="https://twitter.com/Blue_Protocol" class="btn btn-icon btn-twitter btn-round"
@@ -436,100 +436,94 @@
           <div class="card card-coin card-plain">
             <div class="card-header">
               <img src="assets/img/btc.png" class="img-center img-fluid rounded-circle">
-              <h4 class="title">Conversion</h4>
+              <h4 class="title">Quick swap</h4>
             </div>
             <div class="card-body">
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
                   <a class="nav-link active" data-toggle="tab" href="#linka">
-                    Values
+                    Swap
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" data-toggle="tab" href="#linkb">
-                    Swap
+                    Values
                   </a>
                 </li>
               </ul>
               <div class="tab-content tab-subcategories">
                 <div class="tab-pane active" id="linka">
-                  <div class="table-responsive">
-                    <table class="table tablesorter " id="plain-table">
-                      <thead class=" text-primary">
-                        <tr>
-                          <th class="header">
-                            COIN
-                          </th>
-                          <th class="header">
-                            AMOUNT
-                          </th>
-                          <th class="header">
-                            VALUE
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            BTC
-                          </td>
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            10,270.75 USD
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            BYZ
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            1 BLUE
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            BLUE
-                          </td>
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            0.01 USD
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Swap to</label>
+                        <div class="col-sm-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="byzAddress"
+                              placeholder="e.g. BYZ3FSJ1tNfYHYMbFjGxdNmnszskMT2xGiHGc" onkeyup="checkAddress()">
+                              <span class="text-danger" style="display: none;" id="errorValidatingByzAddress">This address is not valid. Valid BYZ address is a BTC address with BYZ as a prefix. eg. BYZ3</span>
+                              <span class="text-success" style="display: none;" id="successValidatingByzAddress">This is a correct BYZ address!</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <label class="col-sm-3 col-form-label">Amount</label>
+                        <div class="col-sm-9">
+                          <div class="form-group">
+                            <input type="text" id="amountToSwap" onkeyup="checkAmount()" class="form-control" placeholder="1.587">
+                            <span class="text-danger" style="display: none;" id="errorAmount">This isn't a number</span>
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        type="submit" id="swapButton" disabled class="btn btn-simple btn-primary btn-icon btn-round float-right"><i
+                          class="tim-icons icon-send"  onclick=gotoSwap() ></i></button>
+                    </div>
+
+               
                 <div class="tab-pane" id="linkb">
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label">Pay to</label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <input type="text" class="form-control"
-                          placeholder="e.g. BYZ1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">
-                        <span class="form-text">Please enter a valid address.</span>
+                    <div class="table-responsive">
+                        <table class="table tablesorter " id="plain-table">
+                          <thead class=" text-primary">
+                            <tr>
+                              <th class="header">
+                                COIN
+                              </th>
+                              <th class="header">
+                                AMOUNT
+                              </th>
+                              <th class="header">
+                                VALUE
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                BYZ
+                              </td>
+                              <td>
+                                4
+                              </td>
+                              <td>
+                                1 BLUE
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                BLUE
+                              </td>
+                              <td>
+                                1
+                              </td>
+                              <td>
+                                <a href="https://coinmarketcap.com/currencies/ethereum-blue/#markets/" target="_blank">Check markets</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label">Amount</label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="1.587">
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    type="submit" class="btn btn-simple btn-primary btn-icon btn-round float-right"><i
-                      class="tim-icons icon-send"  data-toggle="modal" data-target="#myModal1" ></i></button>
-                </div>
-              </div>
+                 </div>
             </div>
           </div>
         </div>
@@ -586,12 +580,16 @@
             system to make sure payments are performed safely and securely. You can rest assured as a merchant that the
             buyer is the valid owner of their Bitcoin, freeing you from liability.</p>
           <div class="btn-wrapper pt-3">
-            <button   data-toggle="modal" data-target="#myModal1"  class="btn btn-simple btn-primary">
-              <i class="tim-icons icon-book-bookmark"></i> Download
-            </button>
-            <button   data-toggle="modal" data-target="#myModal1"  class="btn btn-simple btn-info">
-              <i class="tim-icons icon-bulb-63"></i> Create your wallet
-            </button>
+            <a href="https://chrome.google.com/webstore/detail/blue-worlds-safest-simple/laphpbhjhhgigmjoflgcchgodbbclahk" target=_blank>
+              <button    class="btn btn-simple btn-primary">
+                <i class="tim-icons icon-book-bookmark"></i> Download BLUE wallet
+              </button>
+            </a>  
+            <a href=#swap>
+              <button     class="btn btn-simple btn-info">
+                <i class="tim-icons icon-bulb-63"></i> Get Byzantine
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -611,7 +609,7 @@
           <p class="text-white mb-3">Byzantine superpowers Bitcoin With advanced security features, enabling
             micropayments of BTC that are cheap, fast, and final.</p>
           <div class="btn-wrapper mb-3">
-            <a   data-toggle="modal" data-target="#myModal1" 
+            <a   href=#swap
             class="btn btn-success btn-link btn-sm">
               <p class="category text-success d-inline">
                 Get Byzantine 

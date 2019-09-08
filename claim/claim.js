@@ -157,30 +157,32 @@ window.addEventListener('load', async () => {
             $("#approve").hide();
             liveBlue.approve(byz.swapAddress, (new BigNumber(blue).multipliedBy(1e8)).toString(), {gas: 300000, gasPrice: 32000000000}, function(err, resp) {
                 if(typeof(err) != 'undefined' && err != null) {
-                    $("#warningDiv").fadeIn(250);
+                    $("#bottomDiv").fadeIn(250);
+                    $("#bottomDiv").removeClass("alert-danger alert-success alert-info").addClass("alert-danger");
                     $("#msg").html(err);
                 }
                 else {
                     // $("#msg").html(`Please wait for your transaction to be mined:<br /><a href="https://etherscan.io/tx/${resp}">${resp}</a><br />Then reload this page.`);
-                    $("#warningDivTop").fadeIn(250);
-                    $("#infoDiv").fadeIn(250);
+                    $("#bottomDiv").fadeIn(250);
+                    $("#bottomDiv").removeClass("alert-danger alert-success alert-info").addClass("alert-info");
                     $("#msg").html(`<img src="notification.png" class="notificationBell" />BYZ Swap Step 2: Approve second transaction...`);
                     doTheSwap();
                 }
             });
         }
-
+        
         function doTheSwap() {
             // Perform swap
             //function deposit(uint256 tokens, string memory btcAddress) public payable {
             liveSwap.deposit((new BigNumber(blue).multipliedBy(1e8)).toString(), byzAddress, {gas: 600000, gasPrice: 4000000000}, function(err, resp) {
                 if(typeof(err) != 'undefined' && err != null) {
-                    $("#warningDiv").fadeIn(250);
-                    $("#msg").html(err);
+                    $("#bottomDiv").fadeIn(250);
+                    $("#bottomDiv").removeClass("alert-danger alert-success alert-info").addClass("alert-danger");
+                    $("#msg").html(err) ? $("#msg").html(err) : $("#msg").html("Generic Error, check if you have enough gas or BLUE") ;
                 }
                 else {
-                    $("#warningDivTop").fadeOut(250);
-                    $("#successDiv").fadeIn(250);
+                    $("#bottomDiv").fadeIn(250);
+                    $("#bottomDiv").removeClass("alert-danger alert-success alert-info").addClass("alert-success");
                     $("#msg").html(`Swap complete! Please wait for your transaction to be mined:<br /><a href="https://etherscan.io/tx/${resp}">${resp}</a>`);
                 }
             });
