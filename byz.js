@@ -80,7 +80,7 @@ setTimeout(function(){
         return response.json();
       })
       .then(function(secondCheck) {
-        console.log("There has been " + secondCheck.length + " swaps Last check was :" + myJson.length);
+        
         secondCheck.length>myJson.length ? secondToLatest = secondCheck[secondCheck.length-2] : secondToLatest = myJson[myJson.length-2];
 
         fetch("https://api.blockcypher.com/v1/eth/main/blocks/"+ secondToLatest.blockNum)
@@ -104,7 +104,7 @@ setTimeout(function(){
         return response.json();
       })
       .then(function(thirdCheck) {
-        console.log("There has been " + thirdCheck.length + " swaps Last check was :" + myJson.length);
+        
         thirdCheck.length>myJson.length ? thirdToLatest = thirdCheck[thirdCheck.length-3] : thirdToLatest = myJson[myJson.length-3];
 
         fetch("https://api.blockcypher.com/v1/eth/main/blocks/"+ thirdToLatest.blockNum)
