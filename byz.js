@@ -14,6 +14,116 @@ $(function() {
   $("#amount").val($("#slider-vertical").slider("value"));
 });
 
+function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return interval + " years";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+}
+var aDay = 24*60*60*1000
+
+
+setTimeout(function(){
+  ///SET MODIFIER
+  var modifier = 4;
+
+  fetch("https://api.byz.network/api/allEvents")
+  
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log("There has been " + myJson.length + " swaps");
+    var latestSwap = myJson[myJson.length-1];
+    var secondToLatest = myJson[myJson.length-2];
+    var thirdToLatest = myJson[myJson.length-3];
+    
+    setTimeout(function(){
+      fetch("https://api.blockcypher.com/v1/eth/main/blocks/"+ latestSwap.blockNum)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(blockTime) {
+          setTimeout(function(){$('#modalDialog').modal('hide');},7000)
+          $('#modalDialog').modal(0,1,1,1);
+          $('#timeAgo').html( timeSince(new Date(blockTime.time)) +" ago...");
+          $('#amountModal').html("Someone swapped some BLUE<br />and got " + (latestSwap.amt/10**8)*5 +" BYZ!");
+        });
+    },10000);
+
+    setTimeout(function(){
+      
+      fetch("https://api.byz.network/api/allEvents")
+  
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(secondCheck) {
+        console.log("There has been " + secondCheck.length + " swaps Last check was :" + myJson.length);
+        secondCheck.length>myJson.length ? secondToLatest = secondCheck[secondCheck.length-2] : secondToLatest = myJson[myJson.length-2];
+
+        fetch("https://api.blockcypher.com/v1/eth/main/blocks/"+ secondToLatest.blockNum)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(blockTime) {
+            setTimeout(function(){$('#modalDialog').modal('hide');},7000)
+            $('#modalDialog').modal(0,1,1,1);
+            $('#timeAgo').html( timeSince(new Date(blockTime.time)) +" ago...");
+            $('#amountModal').html("Someone swapped some BLUE<br />and got " + (secondToLatest.amt/10**8)*5 +" BYZ!");
+          });
+      }
+    )},25000);
+
+    setTimeout(function(){
+      
+      fetch("https://api.byz.network/api/allEvents")
+  
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(thirdCheck) {
+        console.log("There has been " + thirdCheck.length + " swaps Last check was :" + myJson.length);
+        thirdCheck.length>myJson.length ? thirdToLatest = thirdCheck[thirdCheck.length-3] : thirdToLatest = myJson[myJson.length-3];
+
+        fetch("https://api.blockcypher.com/v1/eth/main/blocks/"+ thirdToLatest.blockNum)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(blockTime) {
+            
+            $('#modalDialog').modal(0,1,1,1);
+            setTimeout(function(){$('#modalDialog').modal('hide');},7000)
+            $('#timeAgo').html( timeSince(new Date(blockTime.time)) +" ago...");
+            $('#amountModal').html("Someone swapped some BLUE<br />and got " + (thirdToLatest.amt/10**8)*5 +" BYZ!");
+          });
+      }
+    )},39000);
+
+  });
+}, 100);
+
 function gotoSwap(){
   btcAdress = byzAddress.substring(3,byzAddress.length);
   window.location.href = "http://byz.network/claim/?btcAddress=" + btcAdress + "&blue="+ this.blueToSwap;
@@ -57,6 +167,8 @@ function checkAmount(){
   }
 };
 
+
+ 
 
 
 google.charts.load("current", { packages: ["corechart"] });
